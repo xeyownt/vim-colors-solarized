@@ -256,101 +256,67 @@ let s:cyan        = ["#2aa198", "37" ]
 let s:green       = ["#719e07", "64" ] "experimental
 "let s:green       = ["#859900", "64" ] "original
 
-if has("gui_running") || has("nvim")
-    if g:solarized_degrade == 1
-        " These colors are identical to the 256 color mode. They may be viewed
-        " while in gui mode via "let g:solarized_degrade=1", though this is not
-        " recommened and is for testing only.
-        let s:base03[0]      = "#1c1c1c"
-        let s:base02[0]      = "#262626"
-        let s:base01[0]      = "#4e4e4e"
-        let s:base00[0]      = "#585858"
-        let s:base0[0]       = "#808080"
-        let s:base1[0]       = "#8a8a8a"
-        let s:base2[0]       = "#d7d7af"
-        let s:base3[0]       = "#ffffd7"
-        let s:yellow[0]      = "#af8700"
-        let s:orange[0]      = "#d75f00"
-        let s:red[0]         = "#af0000"
-        let s:magenta[0]     = "#af005f"
-        let s:violet[0]      = "#5f5faf"
-        let s:blue[0]        = "#0087ff"
-        let s:cyan[0]        = "#00afaf"
-        let s:green[0]       = "#5f8700"
-    endif
-elseif g:solarized_termcolors != 256 && &t_Co >= 16
-    let s:vmode[0]       = "cterm"
-    let s:base03[0]      = "8"
-    let s:base02[0]      = "0"
-    let s:base01[0]      = "10"
-    let s:base00[0]      = "11"
-    let s:base0[0]       = "12"
-    let s:base1[0]       = "14"
-    let s:base2[0]       = "7"
-    let s:base3[0]       = "15"
-    let s:yellow[0]      = "3"
-    let s:orange[0]      = "9"
-    let s:red[0]         = "1"
-    let s:magenta[0]     = "5"
-    let s:violet[0]      = "13"
-    let s:blue[0]        = "4"
-    let s:cyan[0]        = "6"
-    let s:green[0]       = "2"
-elseif g:solarized_termcolors == 256
-    let s:vmode[0]       = "cterm"
-    let s:base03[0]      = "234"
-    let s:base02[0]      = "235"
-    let s:base01[0]      = "239"
-    let s:base00[0]      = "240"
-    let s:base0[0]       = "244"
-    let s:base1[0]       = "245"
-    let s:base2[0]       = "187"
-    let s:base3[0]       = "230"
-    let s:yellow[0]      = "136"
-    let s:orange[0]      = "166"
-    let s:red[0]         = "124"
-    let s:magenta[0]     = "125"
-    let s:violet[0]      = "61"
-    let s:blue[0]        = "33"
-    let s:cyan[0]        = "37"
-    let s:green[0]       = "64"
-else
-    let s:vmode[0]       = "cterm"
-    let s:bright[0]      = "* term=bold cterm=bold"
-"   let s:base03[0]      = "0".s:bright
-"   let s:base02[0]      = "0"
-"   let s:base01[0]      = "2".s:bright
-"   let s:base00[0]      = "3".s:bright
-"   let s:base0[0]       = "4".s:bright
-"   let s:base1[0]       = "6".s:bright
-"   let s:base2[0]       = "7"
-"   let s:base3[0]       = "7".s:bright
-"   let s:yellow[0]      = "3"
-"   let s:orange[0]      = "1".s:bright
-"   let s:red[0]         = "1"
-"   let s:magenta[0]     = "5"
-"   let s:violet[0]      = "5".s:bright
-"   let s:blue[0]        = "4"
-"   let s:cyan[0]        = "6"
-"   let s:green[0]       = "2"
-    let s:base03[0]      = "DarkGray"      " 0*
-    let s:base02[0]      = "Black"         " 0
-    let s:base01[0]      = "LightGreen"    " 2*
-    let s:base00[0]      = "LightYellow"   " 3*
-    let s:base0[0]       = "LightBlue"     " 4*
-    let s:base1[0]       = "LightCyan"     " 6*
-    let s:base2[0]       = "LightGray"     " 7
-    let s:base3[0]       = "White"         " 7*
-    let s:yellow[0]      = "DarkYellow"    " 3
-    let s:orange[0]      = "LightRed"      " 1*
-    let s:red[0]         = "DarkRed"       " 1
-    let s:magenta[0]     = "DarkMagenta"   " 5
-    let s:violet[0]      = "LightMagenta"  " 5*
-    let s:blue[0]        = "DarkBlue"      " 4
-    let s:cyan[0]        = "DarkCyan"      " 6
-    let s:green[0]       = "DarkGreen"     " 2
-
+if g:solarized_degrade == 1
+    " These colors are identical to the 256 color mode. They may be viewed
+    " while in gui mode via "let g:solarized_degrade=1", though this is not
+    " recommened and is for testing only.
+    let s:base03[0]      = "#1c1c1c"
+    let s:base02[0]      = "#262626"
+    let s:base01[0]      = "#4e4e4e"
+    let s:base00[0]      = "#585858"
+    let s:base0[0]       = "#808080"
+    let s:base1[0]       = "#8a8a8a"
+    let s:base2[0]       = "#d7d7af"
+    let s:base3[0]       = "#ffffd7"
+    let s:yellow[0]      = "#af8700"
+    let s:orange[0]      = "#d75f00"
+    let s:red[0]         = "#af0000"
+    let s:magenta[0]     = "#af005f"
+    let s:violet[0]      = "#5f5faf"
+    let s:blue[0]        = "#0087ff"
+    let s:cyan[0]        = "#00afaf"
+    let s:green[0]       = "#5f8700"
 endif
+
+if g:solarized_termcolors != 256
+    if &t_Co >= 16
+        let s:base03[1]      = "8"
+        let s:base02[1]      = "0"
+        let s:base01[1]      = "10"
+        let s:base00[1]      = "11"
+        let s:base0[1]       = "12"
+        let s:base1[1]       = "14"
+        let s:base2[1]       = "7"
+        let s:base3[1]       = "15"
+        let s:yellow[1]      = "3"
+        let s:orange[1]      = "9"
+        let s:red[1]         = "1"
+        let s:magenta[1]     = "5"
+        let s:violet[1]      = "13"
+        let s:blue[1]        = "4"
+        let s:cyan[1]        = "6"
+        let s:green[1]       = "2"
+    else
+        let s:bright[1]      = "* term=bold cterm=bold"
+        let s:base03[1]      = "DarkGray"      " 0*
+        let s:base02[1]      = "Black"         " 0
+        let s:base01[1]      = "LightGreen"    " 2*
+        let s:base00[1]      = "LightYellow"   " 3*
+        let s:base0[1]       = "LightBlue"     " 4*
+        let s:base1[1]       = "LightCyan"     " 6*
+        let s:base2[1]       = "LightGray"     " 7
+        let s:base3[1]       = "White"         " 7*
+        let s:yellow[1]      = "DarkYellow"    " 3
+        let s:orange[1]      = "LightRed"      " 1*
+        let s:red[1]         = "DarkRed"       " 1
+        let s:magenta[1]     = "DarkMagenta"   " 5
+        let s:violet[1]      = "LightMagenta"  " 5*
+        let s:blue[1]        = "DarkBlue"      " 4
+        let s:cyan[1]        = "DarkCyan"      " 6
+        let s:green[1]       = "DarkGreen"     " 2
+    endif
+endif
+
 "}}}
 " Formatting options and null values for passthrough effect "{{{
 " ---------------------------------------------------------------------
